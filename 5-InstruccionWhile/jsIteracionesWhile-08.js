@@ -7,13 +7,32 @@ function mostrar()
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
-	contador=0;
-	sumaPositivos=0;
-	multiplicacionNegativos=1;
+	var ingreseNumero;
+	
+	contador = 0;
+	
+	sumaPositivos = 0;
+	multiplicacionNegativos = 1;
 	respuesta='si';
 
+	while(respuesta == "si"){
+		
+		ingreseNumero = (prompt("Ingrese un numero."));
+		ingreseNumero = parseInt(ingreseNumero);
+		contador ++;
+		if (ingreseNumero > 0)
+		{
+			sumaPositivos = (sumaPositivos + ingreseNumero);
+		} 
+		else  
+		{
+			multiplicacionNegativos = (multiplicacionNegativos * ingreseNumero);
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+		}
+		respuesta = prompt("Si desea continuar ingrese 'si'.");
+	}
+
+	txtIdSuma.value = sumaPositivos;
+	txtIdProducto.value = multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN

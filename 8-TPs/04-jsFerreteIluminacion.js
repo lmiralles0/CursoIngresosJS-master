@@ -10,5 +10,77 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+  var cLampara;
+  var marcas;
+  var precio;
+  var descuento;
+  var importeF;
+  var importeBr;
+
+  
+  cLampara = parseInt(cLampara)
+  cLampara = txtIdCantidad.value;
+  marcas = Marca.value;
+  descuento = parseInt(descuento);
+  importeF = parseInt(importeF);
+  txtIdprecioDescuento = descuento;
+
+  if (cLampara > 5)
+  {
+      precio = (cLampara * 35);
+      descuento = ((precio * 50) / 100);
+      importeF = (precio - descuento);
+  } 
+  else if (cLampara == 5 && marcas == "ArgentinaLuz")
+  {
+      precio = (cLampara *5);
+      descuento = ((precio  * 40) / 100);
+      importeF = (precio - descuento);
+     
+      if (cLampara == 5 && marcas != "ArgentinaLuz")
+      {
+       precio = (cLampara * 5);
+       descuento = ((precio * 30) / 100);
+       importeF = (precio - descuento);
+     
+      } 
+
+  }
+  else if (cLampara == 4 && marca == ("ArgentinaLuz" || "FelipeLamparas"))
+  {
+      precio = (cLampara * 4);
+      descuento =((precio * 25) / 100);
+      importeF = (precio - descuento);
+      if (precio == 4 && marca != ("ArgentinaLuz" || "FelipeLamaparas"))
+      {
+        precio = (cLampara * 4);
+        descuento  = ((precio * 20) / 100);
+        importeF = (precio - descuento);
+      }
+  }
+  else if (cLampara == 3 && marca == "ArgetinaLuz"){
+      precio = (cLampara * 3);
+      descuento =((precio * 15) / 100);
+      importeF = (precio - descuento);
+      if (precio == 3 && marca == "FelipeLamparas")
+      {
+        precio = (cLampara * 3);
+        descuento = ((precio * 10) / 100);
+        importeF = (precio - descuento);
+      }
+       else 
+       {
+          precio = (cLampara * 3);
+          descuento = ((precio * 5) / 100);
+          importeF = (precio - descuento); 
+       }
+  }  
+  if (importeF > 119)
+  {
+      importeBr = importeF * 10; 
+      alert("Usted pago " + importeBr +" de IBB.");
+  }
+
+
+
 }
